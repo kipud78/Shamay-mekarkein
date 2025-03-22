@@ -35,20 +35,33 @@
       border-radius: 5px;
       margin-top: 1em;
     }
+    a.button:focus,
+    a.button:hover {
+      background-color: #005ea2;
+      outline: 2px solid #003e73;
+    }
     footer {
       text-align: center;
       font-size: 0.9em;
       color: #666;
       margin: 2em 0 1em;
     }
+    footer a {
+      color: #004578;
+      text-decoration: none;
+    }
+    footer a:hover,
+    footer a:focus {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <header>
+  <header role="banner">
     <h1>שמאות מקרקעין מקצועית</h1>
     <p>באמצעות עו"ד ושמאי מקרקעין איתן יבלונסקי</p>
   </header>
-  <main>
+  <main role="main">
     <p>
       איתן יבלונסקי, עורך דין ושמאי מקרקעין מוסמך עם ניסיון של מעל 13 שנים, מציע שירותי שמאות מתקדמים לכל סוגי הנכסים. אנו מתמחים בשומות לפי תקן 19, חוות דעת לירידת ערך, שומות להפקעות והיטלי השבחה, וליווי משפטי מלא.
     </p>
@@ -58,7 +71,8 @@
     <a class="button" href="https://xn--4dbsarcht3bajf.xn--4dbrk0ce/שמאות">למידע נוסף באתר הראשי</a>
   </main>
   <footer>
-    &copy; 2025 איתן יבלונסקי | שמאות מקרקעין וניהול נכסים
+    &copy; 2025 איתן יבלונסקי | שמאות מקרקעין וניהול נכסים<br>
+    <a href="accessibility.html">הצהרת נגישות</a>
   </footer>
 </body>
 </html>
