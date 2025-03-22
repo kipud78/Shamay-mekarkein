@@ -80,17 +80,26 @@
       bottom: 10px;
       left: 10px;
       z-index: 1000;
-      background: rgba(255,255,255,0.9);
-      border-radius: 8px;
-      padding: 0.5em;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3em;
     }
 
     .accessibility-tools button {
-      font-size: 0.9em;
-      margin: 0.2em;
-      padding: 0.4em 0.8em;
+      font-size: 1.2em;
+      padding: 0.4em 0.6em;
+      border-radius: 50%;
+      border: none;
+      background-color: #0078d4;
+      color: white;
       cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .accessibility-tools button:hover,
+    .accessibility-tools button:focus {
+      background-color: #005ea2;
+      outline: none;
     }
 
     .dark-mode {
@@ -106,9 +115,9 @@
 </head>
 <body>
   <div class="accessibility-tools" aria-label="כלי נגישות">
-    <button onclick="toggleDarkMode()">🌓 מצב כהה</button>
-    <button onclick="resizeFont(1)">A+ הגדל טקסט</button>
-    <button onclick="resizeFont(-1)">A− הקטן טקסט</button>
+    <button onclick="toggleDarkMode()" title="מצב כהה">🌓</button>
+    <button onclick="resizeFont(1)" title="הגדלת טקסט">A+</button>
+    <button onclick="resizeFont(-1)" title="הקטנת טקסט">A−</button>
   </div>
 
   <header role="banner">
