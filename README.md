@@ -1,2 +1,2 @@
-# Shamay-mekarkein-
+# Shamay-mekarkein
 דף נחיתה לשמאות מקרקיין
