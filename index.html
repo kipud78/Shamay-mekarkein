@@ -1,155 +1,109 @@
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>שמאות מקרקעין | איתן יבלונסקי</title>
-  <meta name="description" content="שמאות מקרקעין מקצועית עם ניסיון של 13 שנה. שירות אישי, שומות, ירידת ערך, הפקעות וייעוץ משפטי.">
+  <title>שירותי שמאות מקרקעין מקצועיים</title>
   <style>
-    :root {
-      --bg-color: #f5f5f5;
-      --text-color: #333;
-      --header-bg: #004578;
-      --button-bg: #0078d4;
-      --button-hover: #005ea2;
-      --focus-outline: #003e73;
-      --main-bg: #ffffff;
-    }
-
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: background 0.3s, color 0.3s;
-      font-size: 1em;
-    }
-
-    header {
-      background-color: var(--header-bg);
-      color: white;
-      padding: 1em;
-      text-align: center;
-    }
-
-    main {
       padding: 2em;
+      line-height: 1.7;
+      background-color: #f5f5f5;
+      color: #333;
       max-width: 800px;
       margin: auto;
-      background-color: var(--main-bg);
-      transition: background-color 0.3s;
     }
-
-    a.button {
-      display: inline-block;
-      padding: 0.75em 1.5em;
-      background-color: var(--button-bg);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 1em;
-    }
-
-    a.button:focus,
-    a.button:hover {
-      background-color: var(--button-hover);
-      outline: 2px solid var(--focus-outline);
-    }
-
-    footer {
+    h1, h2, h3 {
       text-align: center;
-      font-size: 0.9em;
-      color: #666;
-      margin: 2em 0 1em;
-    }
-
-    footer a {
       color: #004578;
-      text-decoration: none;
     }
-
-    footer a:hover,
-    footer a:focus {
-      text-decoration: underline;
+    a {
+      color: #004578;
     }
-
-    .accessibility-tools {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      gap: 0.3em;
+    .image-container {
+      text-align: center;
+      margin: 2em 0;
     }
-
-    .accessibility-tools button {
-      font-size: 1.2em;
-      padding: 0.4em 0.6em;
-      border-radius: 50%;
-      border: none;
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .back-link {
+      margin-top: 2em;
+      text-align: center;
+    }
+    .back-link a {
       background-color: #0078d4;
       color: white;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      padding: 0.6em 1.2em;
+      border-radius: 5px;
+      text-decoration: none;
     }
-
-    .accessibility-tools button:hover,
-    .accessibility-tools button:focus {
+    .back-link a:hover,
+    .back-link a:focus {
       background-color: #005ea2;
-      outline: none;
-    }
-
-    .dark-mode {
-      --bg-color: #111;
-      --text-color: #f5f5f5;
-      --header-bg: #000;
-      --button-bg: #333;
-      --button-hover: #666;
-      --focus-outline: #fff;
-      --main-bg: #000;
     }
   </style>
 </head>
 <body>
-  <div class="accessibility-tools" aria-label="כלי נגישות">
-    <button onclick="toggleDarkMode()" title="מצב כהה">🌓</button>
-    <button onclick="resizeFont(1)" title="הגדלת טקסט">A+</button>
-    <button onclick="resizeFont(-1)" title="הקטנת טקסט">A−</button>
-  </div>
-
   <header role="banner">
-    <h1>שמאות מקרקעין מקצועית</h1>
-    <p>באמצעות עו"ד ושמאי מקרקעין איתן יבלונסקי</p>
+    <h1>שירותי שמאות מקרקעין מקצועיים</h1>
   </header>
 
   <main role="main">
-    <p>
-      איתן יבלונסקי, עורך דין ושמאי מקרקעין מוסמך עם ניסיון של מעל 13 שנים, מציע שירותי שמאות מתקדמים לכל סוגי הנכסים. אנו מתמחים בשומות לפי תקן 19, חוות דעת לירידת ערך, שומות להפקעות והיטלי השבחה, וליווי משפטי מלא.
-    </p>
-    <p>
-      השירות כולל ייעוץ לפני רכישת נכס, בדיקת זכויות בנייה, והגשת שומות לרשויות כגון רשות מקרקעי ישראל. השירות ניתן באחריות, בדיסקרטיות ובמקצועיות ללא פשרות.
-    </p>
-    <a class="button" href="http://xn--eebjekyag.xn--9dbq2a/">למידע נוסף באתר המרכזי</a>
+    <div class="image-container" role="img" aria-label="בניין מודרני המייצג נכסי נדל״ן">
+      <img src="images/real-estate-placeholder.jpg" alt="תמונה של בניין מודרני המייצג נכסי נדל״ן" />
+    </div>
+
+    <section aria-labelledby="services-title">
+      <h2 id="services-title">השירותים שלנו</h2>
+      <ul>
+        <li>שומות לפי תקן 19</li>
+        <li>הפחתת היטל השבחה</li>
+        <li>הערכת ירידת ערך מקרקעין</li>
+        <li>ליווי שמאי בפרויקטים של התחדשות עירונית</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="about-title">
+      <h2 id="about-title">מי אני?</h2>
+      <p>
+        שמי איתן יבלונסקי, עורך דין ושמאי מקרקעין עם ניסיון של מעל 13 שנה בתחום.  
+        לאורך השנים סייעתי לעשרות לקוחות להפחית היטלים ומיסים, להשיג שומות מדויקות ולהתנהל נכון מול גופים ציבוריים.
+      </p>
+    </section>
+
+    <section aria-labelledby="testimonial-title">
+      <h2 id="testimonial-title">מה לקוחות מספרים?</h2>
+      <blockquote>
+        "לא האמנתי שנוכל להפחית את היטל ההשבחה, אבל איתן עשה את זה עם מקצועיות מדהימה. ממליץ בחום!"
+        <br/>— שירה לוי, רמת גן
+      </blockquote>
+    </section>
+
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title">שאלות נפוצות</h2>
+      <h3>למה חשוב לפנות לשמאי לפני רכישת נכס?</h3>
+      <p>שמאי מוסמך יכול לחסוך לך עשרות אלפי שקלים, לזהות בעיות תכנוניות ולמנוע הפתעות.</p>
+      <h3>מה זה שומה לפי תקן 19?</h3>
+      <p>זהו תקן מחייב להערכת שווי נכסים לצרכי בטוחה לבנקים, בעיקר במשכנתאות.</p>
+    </section>
+
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title">צרו קשר</h2>
+      <p>
+        למידע נוסף או לקביעת פגישה, היכנסו לאתר הראשי:<br />
+        <a href="https://xn--eebjekyag.xn--9dbq2a/" aria-label="מעבר לאתר הראשי מקרקעין.קום">מקרקעין.קום</a>
+      </p>
+    </section>
+
+    <div class="back-link">
+      <a href="index.html" aria-label="חזרה לעמוד הראשי">חזרה לעמוד הראשי</a>
+    </div>
   </main>
-
-  <footer>
-    &copy; 2025 איתן יבלונסקי | שמאות מקרקעין וניהול נכסים<br>
-    <a href="accessibility.html">הצהרת נגישות</a>
-  </footer>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-
-    let fontSize = 1;
-    function resizeFont(change) {
-      fontSize = Math.max(0.8, Math.min(2, fontSize + change * 0.1));
-      document.body.style.fontSize = fontSize + 'em';
-    }
-  </script>
 </body>
 </html>
