@@ -1,109 +1,758 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>שירותי שמאות מקרקעין מקצועיים</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 2em;
-      line-height: 1.7;
-      background-color: #f5f5f5;
-      color: #333;
-      max-width: 800px;
-      margin: auto;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משרד עורכי דין - שם המשרד</title>
+    <meta name="description" content="משרד עורכי דין המתמחה בתחומי המשפט האזרחי, המסחרי והפלילי. ייעוץ משפטי מקצועי וייצוג בבתי משפט.">
+    <meta name="keywords" content="עורך דין, ייעוץ משפטי, ייצוג משפטי, עורכי דין, משפט אזרחי, משפט מסחרי">
+    
+    <!-- Schema.org לשיפור SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "משרד עורכי דין - שם המשרד",
+      "image": "",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "רחוב ומספר",
+        "addressLocality": "עיר",
+        "postalCode": "מיקוד",
+        "addressCountry": "IL"
+      },
+      "telephone": "טלפון",
+      "url": "https://www.domain.co.il",
+      "openingHours": "Mo,Tu,We,Th,Su 09:00-19:00 Fr 09:00-13:00",
+      "priceRange": "₪₪",
+      "serviceArea": "ישראל"
     }
-    h1, h2, h3 {
-      text-align: center;
-      color: #004578;
-    }
-    a {
-      color: #004578;
-    }
-    .image-container {
-      text-align: center;
-      margin: 2em 0;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    .back-link {
-      margin-top: 2em;
-      text-align: center;
-    }
-    .back-link a {
-      background-color: #0078d4;
-      color: white;
-      padding: 0.6em 1.2em;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-    .back-link a:hover,
-    .back-link a:focus {
-      background-color: #005ea2;
-    }
-  </style>
+    </script>
+    
+    <style>
+        /* משתני CSS */
+        :root {
+            --primary-color: #1a456e;
+            --secondary-color: #f0f5fa;
+            --accent-color: #d4a017;
+            --text-color: #333;
+            --light-text: #fff;
+            --dark-bg: #333;
+            --light-bg: #f9f9f9;
+            --font-main: 'Assistant', 'Rubik', sans-serif;
+            --transition: all 0.3s ease;
+            --spacing: 1rem;
+            --radius: 4px;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* עיצוב בסיסי */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            font-size: 16px; /* גודל בסיסי לטקסט */
+        }
+
+        /* הגדרות נגישות */
+        a:focus, button:focus, input:focus, textarea:focus, [tabindex]:focus {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* יחס ניגודיות טוב לנגישות */
+        .high-contrast {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* כותרות */
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: var(--spacing);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        /* קישורים */
+        a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            transition: var(--transition);
+        }
+
+        a:hover, a:focus {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* כפתורים */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            border: none;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .btn:hover, .btn:focus {
+            background-color: var(--accent-color);
+            color: var(--dark-bg);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary:hover, .btn-secondary:focus {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        /* מיכלים */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+
+        /* כותרת עליונה */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo a {
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+        /* תפריט ניווט */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+            padding: 0.5rem;
+        }
+
+        nav ul li a:hover, nav ul li a:focus, nav ul li a.active {
+            color: var(--accent-color);
+        }
+
+        /* תפריט המבורגר לנייד */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--light-text);
+            cursor: pointer;
+        }
+
+        /* סקציות */
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--secondary-color);
+        }
+
+        /* גיבור */
+        .hero {
+            background: linear-gradient(rgba(26, 69, 110, 0.8), rgba(26, 69, 110, 0.8)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        /* תחומי התמחות */
+        .services {
+            text-align: center;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            margin: 1rem 0;
+        }
+
+        /* צוות */
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background-color: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .team-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+        }
+
+        .team-info h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .team-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* עדויות */
+        .testimonials {
+            text-align: center;
+        }
+
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            text-align: right;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            top: -1rem;
+            right: -1rem;
+            color: var(--secondary-color);
+            z-index: -1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* צור קשר */
+        .contact {
+            background-color: var(--secondary-color);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info, .contact-form {
+            background-color: #fff;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3, .contact-form h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            border-radius: 50%;
+        }
+
+        /* טופס */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-family: var(--font-main);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        /* פוטר */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: right;
+        }
+
+        .footer-section h3 {
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover, .footer-links a:focus {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* מפת האתר */
+        .sitemap {
+            list-style: none;
+        }
+
+        .sitemap li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* כפתור נגישות */
+        .accessibility-toggle {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            border: none;
+            box-shadow: var(--shadow);
+        }
+
+        .accessibility-toggle:hover, .accessibility-toggle:focus {
+            background-color: var(--accent-color);
+        }
+
+        /* מדיה קוורי */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                padding: 1rem;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* תגדיל טקסט */
+        .large-text {
+            font-size: 120%;
+        }
+
+        /* נטול אנימציות */
+        .reduce-motion {
+            transition: none !important;
+            animation: none !important;
+        }
+    </style>
+    
+    <!-- טעינת הגופנים -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Rubik:wght@400;500;700&display=swap">
 </head>
 <body>
-  <header role="banner">
-    <h1>שירותי שמאות מקרקעין מקצועיים</h1>
-  </header>
+    <!-- כפתור נגישות -->
+    <button class="accessibility-toggle" aria-label="אפשרויות נגישות" id="accessibilityToggle">
+        <i class="fas fa-universal-access"></i>
+    </button>
 
-  <main role="main">
-    <div class="image-container" role="img" aria-label="בניין מודרני המייצג נכסי נדל״ן">
-      <img src="images/real-estate-placeholder.jpg" alt="תמונה של בניין מודרני המייצג נכסי נדל״ן" />
-    </div>
+    <!-- כותרת עליונה -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#" title="דף הבית">משרד עורכי דין - שם המשרד</a>
+            </div>
+            <button class="hamburger" aria-label="תפריט">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="menu">
+                    <li><a href="#" class="active">דף הבית</a></li>
+                    <li><a href="#about">אודות</a></li>
+                    <li><a href="#services">תחומי התמחות</a></li>
+                    <li><a href="#team">הצוות</a></li>
+                    <li><a href="#testimonials">המלצות</a></li>
+                    <li><a href="#contact">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <section aria-labelledby="services-title">
-      <h2 id="services-title">השירותים שלנו</h2>
-      <ul>
-        <li>שומות לפי תקן 19</li>
-        <li>הפחתת היטל השבחה</li>
-        <li>הערכת ירידת ערך מקרקעין</li>
-        <li>ליווי שמאי בפרויקטים של התחדשות עירונית</li>
-      </ul>
+    <!-- גיבור -->
+    <section class="hero">
+        <div class="container">
+            <h1>ייעוץ משפטי מקצועי ואישי</h1>
+            <p>משרד עורכי דין המתמחה במגוון תחומי המשפט עם מוניטין של הצלחה. אנו מחויבים למצוינות, אתיקה מקצועית וללקוחותינו.</p>
+            <a href="#contact" class="btn">פגישת ייעוץ ראשונית</a>
+        </div>
     </section>
 
-    <section aria-labelledby="about-title">
-      <h2 id="about-title">מי אני?</h2>
-      <p>
-        שמי איתן יבלונסקי, עורך דין ושמאי מקרקעין עם ניסיון של מעל 13 שנה בתחום.  
-        לאורך השנים סייעתי לעשרות לקוחות להפחית היטלים ומיסים, להשיג שומות מדויקות ולהתנהל נכון מול גופים ציבוריים.
-      </p>
+    <!-- אודות -->
+    <section id="about">
+        <div class="container">
+            <h2>אודות המשרד</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>משרד עורכי הדין שלנו נוסד בשנת XXXX, ומאז צבר מוניטין כמוביל בתחומי המשפט האזרחי, המסחרי והפלילי. אנו מחויבים להעניק ללקוחותינו את הייצוג המשפטי הטוב ביותר, תוך שמירה על סטנדרטים גבוהים של מקצועיות, יושרה ואמינות.</p>
+                    <p>הצוות שלנו מורכב מעורכי דין מנוסים ומקצועיים, בעלי ידע נרחב בתחומי המשפט השונים. אנו מאמינים במתן שירות אישי ומותאם לצרכי הלקוח, תוך הבנה מעמיקה של האתגרים המשפטיים העומדים בפניו.</p>
+                    <p>אנו מלווים את לקוחותינו בכל שלבי ההליך המשפטי, החל מייעוץ ראשוני ועד לייצוג בבתי המשפט. המטרה שלנו היא להגיע לתוצאות המיטביות עבור לקוחותינו, תוך שמירה על האינטרסים שלהם.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section aria-labelledby="testimonial-title">
-      <h2 id="testimonial-title">מה לקוחות מספרים?</h2>
-      <blockquote>
-        "לא האמנתי שנוכל להפחית את היטל ההשבחה, אבל איתן עשה את זה עם מקצועיות מדהימה. ממליץ בחום!"
-        <br/>— שירה לוי, רמת גן
-      </blockquote>
+    <!-- תחומי התמחות -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>תחומי התמחות</h2>
+            <p>אנו מציעים מגוון רחב של שירותים משפטיים המותאמים לצרכים הספציפיים של לקוחותינו</p>
+            <div class="services-container">
+                <div class="service-card">
+                    <i class="fas fa-balance-scale fa-3x" aria-hidden="true"></i>
+                    <h3>משפט אזרחי</h3>
+                    <p>ייצוג בתביעות נזיקין, חוזים, סכסוכי שכנים, מקרקעין, הוצאה לפועל ועוד.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-gavel fa-3x" aria-hidden="true"></i>
+                    <h3>משפט מסחרי</h3>
+                    <p>ליווי עסקאות, הסכמים מסחריים, דיני תאגידים, סכסוכים עסקיים ועוד.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users fa-3x" aria-hidden="true"></i>
+                    <h3>דיני משפחה</h3>
+                    <p>גירושין, מזונות, משמורת ילדים, חלוקת רכוש, צוואות וירושות.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-home fa-3x" aria-hidden="true"></i>
+                    <h3>נדל"ן</h3>
+                    <p>עסקאות נדל"ן, ליווי רכישה ומכירה, היתרי בנייה, סכסוכי מקרקעין.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-briefcase fa-3x" aria-hidden="true"></i>
+                    <h3>דיני עבודה</h3>
+                    <p>יחסי עובד-מעביד, זכויות עובדים, הסכמי העסקה, פיטורין, תביעות.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-file-contract fa-3x" aria-hidden="true"></i>
+                    <h3>ליטיגציה</h3>
+                    <p>ייצוג בבתי משפט ובתי דין, הליכי בוררות וגישור, ערעורים.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section aria-labelledby="faq-title">
-      <h2 id="faq-title">שאלות נפוצות</h2>
-      <h3>למה חשוב לפנות לשמאי לפני רכישת נכס?</h3>
-      <p>שמאי מוסמך יכול לחסוך לך עשרות אלפי שקלים, לזהות בעיות תכנוניות ולמנוע הפתעות.</p>
-      <h3>מה זה שומה לפי תקן 19?</h3>
-      <p>זהו תקן מחייב להערכת שווי נכסים לצרכי בטוחה לבנקים, בעיקר במשכנתאות.</p>
+    <!-- צוות -->
+    <section id="team">
+        <div class="container">
+            <h2>הצוות המשפטי שלנו</h2>
+            <p>צוות עורכי הדין שלנו מורכב ממומחים בתחומם, בעלי ניסיון רב וידע נרחב</p>
+            <div class="team-container">
+                <div class="team-card">
+                    <img src="/api/placeholder/400/400" alt="תמונת עורך דין">
+                    <div class="team-info">
+                        <h3>עו"ד ישראל ישראלי</h3>
+                        <p>שותף מייסד</p>
+                        <p>מומחה בדיני נדל"ן ומסחרי</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="/api/placeholder/400/400" alt="תמונת עורך דין">
+                    <div class="team-info">
+                        <h3>עו"ד רחל כהן</h3>
+                        <p>שותפה</p>
+                        <p>מומחית בדיני משפחה</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="/api/placeholder/400/400" alt="תמונת עורך דין">
+                    <div class="team-info">
+                        <h3>עו"ד יעקב לוי</h3>
+                        <p>שותף</p>
+                        <p>מומחה בליטיגציה</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section aria-labelledby="contact-title">
-      <h2 id="contact-title">צרו קשר</h2>
-      <p>
-        למידע נוסף או לקביעת פגישה, היכנסו לאתר הראשי:<br />
-        <a href="https://xn--eebjekyag.xn--9dbq2a/" aria-label="מעבר לאתר הראשי מקרקעין.קום">מקרקעין.קום</a>
-      </p>
+    <!-- המלצות -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>לקוחות ממליצים</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>עורכי הדין במשרד ליוו אותי לאורך כל ההליך המשפטי בצורה מקצועית ומסורה. הם היו זמינים עבורי בכל עת והצליחו להשיג תוצאות מצוינות.</p>
+                    </div>
+                    <div class="testimonial-author">ד.ג., תל אביב</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>קיבלתי ייעוץ משפטי מעולה שהוביל לפתרון הבעיה במהירות וביעילות. אני ממליץ בחום על משרד עורכי הדין לכל מי שזקוק לייצוג משפטי איכותי.</p>
+                    </div>
+                    <div class="testimonial-author">ש.כ., ירושלים</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>היחס האישי והמקצועיות של צוות המשרד יוצאים מן הכלל. הם הקדישו זמן להבין את הצרכים הייחודיים שלי והתאימו את האסטרטגיה המשפטית בהתאם.</p>
+                    </div>
+                    <div class="testimonial-author">מ.ל., חיפה</div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <div class="back-link">
-      <a href="index.html" aria-label="חזרה לעמוד הראשי">חזרה לעמוד הראשי</a>
-    </div>
-  </main>
-</body>
-</html>
+    <!-- צור קשר -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>צור קשר</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>פרטי התקשרות</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p>רחוב ומספר, עיר, מיקוד</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <p>טלפון: XXX-XXXXXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p>דוא"ל: info@yourlawfirm.co.il</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <p>שעות פעילות:</p>
+                            <p>ימים א'-ה': 09:00-19:00</p>
+                            <p>יום ו': 09:00-13:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>השאירו פרטים ונחזור אליכם בהקדם</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">שם מלא*</label>
+                            <input type="text" id="name" name="name" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">טלפון*</label>
+                            <input type="tel" id="phone" name="phone" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">דוא"ל</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">נושא הפנייה*</label>
+                            <input type="text" id="subject" name="subject" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">תוכן הפנייה*</label>
+                            <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                        </div>
+                        <button type="submit" class="btn">שליחה</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- פוטר -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>משרד
